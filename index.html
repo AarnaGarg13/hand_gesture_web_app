@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Hand Gestures Web App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js" integrity="sha512-dQIiHSl2hr3NWKKLycPndtpbh5iaHLo6MwrXm7F0FM5e+kL2U16oE9uIwPHUl6fQBeCthiEuV/rzP3MiAB8Vfw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="heading1" class="btn btn-info">Hand Gestures Web App<br>
+            <span>👍</span>
+            <span>👌</span>
+            <span>✌️</span>
+            <span>🤟</span>
+            <span>🫶</span>
+            <span>✊</span>
+            </h1>
+            <h2 id="heading2">Take your selfie to generate an Emoji</h2>
+            <br>
+            <h3 id="heading3">The model is trained for the following hand gestures - 
+                <br>
+                <br>
+                <span>👍</span>
+                <span>👌</span>
+                <span>✌️</span>
+            </h3>
+            <br>
+            <br>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <label id="label1">Webcam View - </label>
+                <br>
+                <div id="camera"></div>
+                <br>
+                <br>
+                <button class="btn btn-info" onclick="take_snapshot();">Capture Image</button>
+                <br>
+                <br>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <label id="l1">Prediction 1</label>
+                <br>
+                <br>
+                <p id="pred1"></p>
+                <br>
+                <br>
+                <p id="pred1_emoji"></p>
+                <br>
+                <br>
+                <label id="l2">Prediction 2</label>
+                <br>
+                <br>
+                <br>
+                <p id="pred2"></p>
+                <br>
+                <br>
+                <p id="pred2_gesture_emoji"></p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <label id="label2">Snapshot - </label>
+                <br>
+                <div id="snapshot"></div>
+                <br>
+                <br>
+                <button class="btn btn-success" onclick="predict_gesture();">Predict Gesture</button>
+            </div>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>
